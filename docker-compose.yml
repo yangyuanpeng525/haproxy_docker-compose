@@ -1,0 +1,12 @@
+version : '3.7'
+services:
+  haproxy:
+        container_name : haproxy
+        hostname: haproxy
+        image: registry.cn-hangzhou.aliyuncs.com/yangyuanpeng/haproxy:2.1.4
+        volumes:
+           - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+        ports :
+          - 1080:1080
+          - 80:80
+        restart: always
